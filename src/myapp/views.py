@@ -6,7 +6,6 @@ from .models import User
 def FunctionBasedViews(request):
     return HTTPResponse("Function Based Views (mambo)")
 
-
 def user_list_json(request):
     # Mengambil semua user dari database sebagai list of dict
     users = list(User.objects.all().values('id', 'first_name', 'last_name', 'gender'))
