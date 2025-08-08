@@ -18,10 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from myapp.views import FunctionBasedViews
 from myapp.views import user_list_json
+from myapp.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('FunctionBasedViews/',  FunctionBasedViews),
     path('userlistjson/', user_list_json, name='user_list_json'),
+    path('', index, name='index'),
 ]
 
