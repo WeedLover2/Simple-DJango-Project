@@ -4,15 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    <link rel="" >
 </head>
 <body>
-<h1>Student List</h1>
-    <h3>
-    <ul>
-        {% for x in Student %}
-             <li>{{ x }}</li> 
+    {% if has_users %}
+        <h2>We have {{ total_users }} users!</h2>
+     
+        <h3>Male Users ({{ male_count }})</h3>
+        {% for user in male_users %}
+            <div>{{ user.first_name }} {{ user.last_name }}</div>
+        {% empty %}
+            <p>No male users found</p>
         {% endfor %}
-    </ul>
-    </h3>
+        
+        <h3>Female Users ({{ female_count }})</h3>
+        {% for user in female_users %}
+            <div>{{ user.first_name }} {{ user.last_name }}</div>
+        {% empty %}
+            <p>No female users found</p>
+        {% endfor %}
+    {% else %}
+        <p>No users in database</p>
+    {% endif %} 
+    <h3>An Normal Image</h3>
+    <div>
+        <img id="myImage" src="{% static 'myapp/img/baby.png' %}" alt="Cute Baby" style="width: 200px; height: 200px;">
+        <button id="myButton"> Click Me! </button>
+    </div>
+    <script src="{% static 'myapp/js/script.js' %}"> </script>
+    <script>
+        const imageUrls = {
+        baby1: "{% static 'myapp/images/baby.png' %}",
+        baby2: "{% static 'myapp/images/baby2.png' %}",    
+    };
+    </script>
 </body>
 </html>

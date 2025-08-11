@@ -16,14 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import FunctionBasedViews
-from myapp.views import user_list_json
-from myapp.views import index
+from myapp.views import FunctionBasedViews, user_list_json, user_list, user_conditional_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('FunctionBasedViews/',  FunctionBasedViews),
     path('userlistjson/', user_list_json, name='user_list_json'),
-    path('', index, name='index'),
+    path('userlist/', user_list, name='user_list'),
+    path('userconditional/', user_conditional_list, name='user_conditional_list'),
 ]
 
