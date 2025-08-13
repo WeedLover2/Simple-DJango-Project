@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    <link rel="" >
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">MyDjangoSite</a>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                <li><a href="{% url 'user' %}">User</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}
+        <h1>Welcome to Django Template Inheritance Demo</h1>
+        <p>This is the base template. Content from child templates will replace this block.</p>
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MyDjangoSite. All rights reserved.</p>
+    </footer>
+</body>
+</html>

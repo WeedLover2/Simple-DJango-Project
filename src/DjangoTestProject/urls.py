@@ -16,13 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import FunctionBasedViews, user_list_json, user_list, user_conditional_list
+from myapp.views import userList, home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('FunctionBasedViews/',  FunctionBasedViews),
-    path('userlistjson/', user_list_json, name='user_list_json'),
-    path('userlist/', user_list, name='user_list'),
-    path('userconditional/', user_conditional_list, name='user_conditional_list'),
-]
-
+    path('', home, name='home'),
+    path('users/', userList, name='user'),
+]   
