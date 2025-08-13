@@ -22,3 +22,9 @@ def userList (request):
 
 def home(request):
     return render(request, 'home.html')
+
+def example(request):
+    return render(request, 'Contoh/contohParents.html')
+
+def example_child(request):
+    return render(request, 'Contoh/contohChildren.html')
