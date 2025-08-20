@@ -1,6 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from .models import User
+from django.shortcuts import redirect
 
 
 # Create your views here.
@@ -22,3 +23,15 @@ def userList (request):
 
 def home(request):
     return render(request, 'home.html')
+
+def user_login(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        try:
+            user = User.objects.get(email=email, password=password)
+            return redirect('home')
+        except User.DoesNotExist:
+            message = "Invalid email or password"
+            return render(request, 'Login.html', {'message': message})
+    return render(request, 'Login.html')
