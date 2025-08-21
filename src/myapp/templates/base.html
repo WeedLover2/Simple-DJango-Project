@@ -11,10 +11,11 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="/" class="logo">MyDjangoSite</a>
+            <p class="logo">MyDjangoSite</p>
             <ul class="nav-links">
                 <li><a href="{% url 'home' %}" class="active">Home</a></li>
                 <li><a href="{% url 'user' %}">User</a></li>
+                <li><a href="{% url 'login' %}">Logout</a></li>
             </ul>
         </div>
     </nav>
