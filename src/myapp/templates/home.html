@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
 {% block content %}
     <h1>Welcome to the Home Page</h1>
     <p>This is the home page of our Django application.</p>
     <p>Feel free to explore the site!</p>
+    {% if request.user.is.authenticated %}
+        <p> User is logged in </p>
+    {% else %}
+        <p> User is not logged in </p>
+    {% endif %}        
 {% endblock %}

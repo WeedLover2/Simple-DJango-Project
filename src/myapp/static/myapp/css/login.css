@@ -4,6 +4,12 @@ body {
 	margin: 0;
 	padding: 20px;
 }
+
+h1 {
+	text-align: center;
+	justify-content: center;
+}
+
 form {
 	background-color: #fff;
 	padding: 20px;

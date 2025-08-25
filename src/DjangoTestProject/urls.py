@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from myapp.views import userList, home, user_login
+from myapp.views import custom_protected_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', home, name='home'),
     path('users/', userList, name='user'),
     path('', user_login, name='login'),
+    path('loginrequired/', custom_protected_view, name='loginrequired'),
 ]   
 
